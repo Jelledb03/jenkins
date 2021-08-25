@@ -16,7 +16,6 @@ pipeline {
                 sh 'pip --version'
             }
             steps {
-                sh 'python --version'
                 echo "Hello, my name is what? My name is who? My name is ${MY_NAME}"
             }
         }
