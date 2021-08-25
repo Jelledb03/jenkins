@@ -5,6 +5,7 @@ pipeline {
     
     parameters {
         string(name: 'AGE', defaultValue: '24', description: 'How old am I?')
+    }
     
     agent {
         docker {
