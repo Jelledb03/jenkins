@@ -14,7 +14,7 @@ pipeline {
         }
     }
     post {
-        succes {
+        success {
             echo 'Het is gelukt yoohoo!'
         }
     }
