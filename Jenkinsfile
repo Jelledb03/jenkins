@@ -22,7 +22,7 @@ pipeline {
         }
         stage('test'){
             steps {
-                sh 'python test_volume_cuboid.py'
+                sh 'python -m unittest test_volume_cuboid.py'
             }
         }
     }
