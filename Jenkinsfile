@@ -10,24 +10,19 @@ pipeline {
     agent {
         docker {
             image 'python:latest'
+            args (-u root)
         }
     }
 
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
-                sh 'pip --version'
+                sh 'pip install -r requirements.txt'
             }
         }
-        stage('my_name'){
+        stage('test'){
             steps {
-                echo "Hello, my name is what? My name is who? My name is ${MY_NAME} and I am ${params.AGE}"
-            }
-        }
-        stage("build in environment variables"){
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
+                sh 'python test_volume_cuboid.py'
             }
         }
     }
