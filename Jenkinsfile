@@ -21,6 +21,11 @@ pipeline {
                 echo "Hello, my name is what? My name is who? My name is ${MY_NAME}"
             }
         }
+        stage("build in environment variables"){
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
+            }
+        }
     }
     post {
         success {
