@@ -13,4 +13,9 @@ pipeline {
             }
         }
     }
+    post {
+        succes {
+            echo 'Het is gelukt yoohoo!'
+        }
+    }
 }
