@@ -3,6 +3,9 @@ pipeline {
         MY_NAME = 'Jelle'    
     }
     
+    parameters {
+        string(name: 'AGE', defaultValue: '24', description: 'How old am I?')
+    
     agent {
         docker {
             image 'python:latest'
@@ -18,7 +21,7 @@ pipeline {
         }
         stage('my_name'){
             steps {
-                echo "Hello, my name is what? My name is who? My name is ${MY_NAME}"
+                echo "Hello, my name is what? My name is who? My name is ${MY_NAME} and I am ${params.AGE}"
             }
         }
         stage("build in environment variables"){
