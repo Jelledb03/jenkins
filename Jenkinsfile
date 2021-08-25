@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        MY_NAME = 'Jelle'    
+    }
+    
     agent {
         docker {
             image 'python:latest'
@@ -10,6 +14,10 @@ pipeline {
             steps {
                 sh 'python --version'
                 sh 'pip --version'
+            }
+            steps {
+                sh 'python --version'
+                echo "Hello, my name is what? My name is who? My name is ${MY_NAME}"
             }
         }
     }
