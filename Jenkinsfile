@@ -15,6 +15,8 @@ pipeline {
                 sh 'python --version'
                 sh 'pip --version'
             }
+        }
+        stage('my_name'){
             steps {
                 echo "Hello, my name is what? My name is who? My name is ${MY_NAME}"
             }
